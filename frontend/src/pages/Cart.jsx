@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { FaTrash } from "react-icons/fa";
 import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
+import But from "../components/old/components/but";
 
 const Cart = () => {
   const navigate = useNavigate();
@@ -76,7 +77,8 @@ const Cart = () => {
                       className="text-red-500 mr-[5rem]"
                       onClick={() => removeFromCartHandler(item._id)}
                     >
-                      <FaTrash className="ml-[1rem] mt-[.5rem]" />
+                      {/* <FaTrash className="ml-[1rem] mt-[.5rem]" /> */}
+                      <But />
                     </button>
                   </div>
                 </div>
