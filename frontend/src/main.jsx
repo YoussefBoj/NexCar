@@ -40,10 +40,10 @@ import Home1 from "./pages/Home1.jsx";
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
-      <Route path="/home" element={<Home1 />} />
+      <Route index={true} path="/" element={<Home1 />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
-      <Route index={true} path="/" element={<Home />} />
+      <Route path="/home" element={<Home />} />
       <Route path="/favorite" element={<Favorites />} />
       <Route path="/product/:id" element={<ProductDetails />} />
       <Route path="/cart" element={<Cart />} />

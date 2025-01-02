@@ -72,7 +72,7 @@ const Navbar = () => {
           }}
         >
           {[
-            { name: "Home", path: "/" },
+            { name: "Home", path: "/home" },
             { name: "Store", path: "/shop" },
             { name: "Favorite", path: "/favorite" },
             { name: "Profile", path: "/profile" },
