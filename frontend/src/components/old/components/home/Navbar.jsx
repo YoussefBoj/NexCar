@@ -1,7 +1,34 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import Button1 from "../ui/Button1";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux"; 
+import { useLogoutMutation } from "../../../../redux/api/usersApiSlice"; 
+import { logout } from "../../../../redux/features/auth/authSlice"; 
 
 const Navbar = () => {
+  const isLoggedIn = localStorage.getItem("userInfo") !== null;
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [logoutApiCall] = useLogoutMutation(); 
+
+  const handleLogout = async () => {
+    try {
+     
+      await logoutApiCall().unwrap();
+
+    
+      dispatch(logout());
+
+      
+      localStorage.removeItem("userInfo");
+
+      navigate("/login");
+    } catch (error) {
+      console.error("Logout error:", error);
+  
+    }
+  };
+
   return (
     <nav
       style={{
@@ -45,10 +72,11 @@ const Navbar = () => {
           }}
         >
           {[
-            { name: "Home", path: "/home1" },
+            { name: "Home", path: "/" },
             { name: "Store", path: "/shop" },
+            { name: "Favorite", path: "/favorite" },
             { name: "Profile", path: "/profile" },
-            { name: "Contact", path: "#" }, 
+            { name: "Contact", path: "#" },
           ].map(({ name, path }) => (
             <li key={name} style={{ position: "relative" }}>
               <Link
@@ -58,6 +86,7 @@ const Navbar = () => {
                   color: "#ffffff",
                   textDecoration: "none",
                   fontSize: "18px",
+                  fontWeight:"700",
                   transition: "color 0.3s ease",
                 }}
                 onMouseEnter={(e) => {
@@ -73,50 +102,18 @@ const Navbar = () => {
           ))}
         </ul>
         <div style={{ display: "flex", gap: "16px" }}>
-          <button
-            style={{
-              padding: "10px 20px",
-              fontSize: "16px",
-              color: "#fff",
-              background: "linear-gradient(135deg, #6a0dad, #9d50bb)",
-              border: "none",
-              borderRadius: "30px",
-              cursor: "pointer",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = "scale(1.05)";
-              e.target.style.boxShadow = "0 4px 15px rgba(154, 50, 205, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = "scale(1)";
-              e.target.style.boxShadow = "none";
-            }}
-          >
-            Login
-          </button>
-          <button
-            style={{
-              padding: "10px 20px",
-              fontSize: "16px",
-              color: "#fff",
-              background: "linear-gradient(135deg, #9d50bb, #ff004f)",
-              border: "none",
-              borderRadius: "30px",
-              cursor: "pointer",
-              transition: "transform 0.3s ease, box-shadow 0.3s ease",
-            }}
-            onMouseEnter={(e) => {
-              e.target.style.transform = "scale(1.05)";
-              e.target.style.boxShadow = "0 4px 15px rgba(255, 0, 79, 0.4)";
-            }}
-            onMouseLeave={(e) => {
-              e.target.style.transform = "scale(1)";
-              e.target.style.boxShadow = "none";
-            }}
-          >
-            Sign Up
-          </button>
+          {isLoggedIn ? (
+            <Button1 text="Logout" onClick={handleLogout} />
+          ) : (
+            <>
+              <Link to="/register">
+                <Button1 text="Sign Up" />
+              </Link>
+              <Link to="/login">
+                <Button1 text="Login" />
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </nav>

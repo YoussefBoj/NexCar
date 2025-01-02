@@ -6,23 +6,33 @@ const FAQ = () => {
   const accordionData = [
     {
       id: 1,
-      question: "What is x-data?",
-      answer: "Declare a new Alpine component and its data for a block of HTML.",
+      question: "What is NexCar?",
+      answer: "NexCar is the best website in this universe.",
     },
     {
       id: 2,
-      question: "What is x-bind?",
-      answer: "Dynamically set HTML attributes on an element.",
+      question: "How do I get started whith NexCar?",
+      answer: "You can now sign up in our beautiful website and enjoy .",
     },
     {
       id: 3,
-      question: "What is $store?",
+      question: "What kind of Car Rental do i need?",
       answer: "Access a global store registered using Alpine.store(...).",
     },
     {
       id: 4,
-      question: "What is x-on?",
+      question: "What are  best car models for 2025?",
       answer: "Listen for browser events on an element.",
+    },
+    {
+      id: 5,
+      question: "How do I get started whith NexCar?",
+      answer: "You can now sign up in our beautiful website and enjoy .",
+    },
+    {
+      id: 6,
+      question: "why i should take a car?",
+      answer: "You can now sign up in our beautiful website and enjoy .",
     },
   ];
 

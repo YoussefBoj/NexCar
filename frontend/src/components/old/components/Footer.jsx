@@ -16,12 +16,12 @@ const Footer = () => {
           <div className="col-xs-6 col-md-3">
             <h6>Categories</h6>
             <ul className="footer-links">
-              <li><a href="#">C</a></li>
-              <li><a href="#">Cars</a></li>
-              <li><a href="#">Planes</a></li>
-              <li><a href="#">Luxus</a></li>
-              <li><a href="#">4 Doors</a></li>
-              <li><a href="#">2 Doors</a></li>
+              <li><a href="#">Coupe</a></li>
+              <li><a href="#">Compacte</a></li>
+              <li><a href="#">Citadine</a></li>
+              <li><a href="#">Berline</a></li>
+              <li><a href="#">Utilitaire</a></li>
+              <li><a href="#">Pick Up</a></li>
             </ul>
           </div>
 
@@ -29,10 +29,11 @@ const Footer = () => {
             <h6>Quick Links</h6>
             <ul className="footer-links">
               <li><a href="#">Home</a></li>
-              <li><a href="#">About Us</a></li>
-              <li><a href="#">Contact Us</a></li>
-              <li><a href="#">Privacy Policy</a></li>
-              <li><a href="#">Cars</a></li>
+              <li><a href="#">Login In</a></li>
+              <li><a href="#">Profile</a></li>
+              <li><a href="#">Shop</a></li>
+              <li><a href="#">Favorite</a></li>
+              <li><a href="#">Contact us</a></li>
             </ul>
           </div>
         </div>

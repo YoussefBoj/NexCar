@@ -4,15 +4,15 @@ import { Link } from "react-router-dom";
 import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
 
 // Create a single 3D card demo component
-export function ThreeDCardDemo({source}) {
+export function ThreeDCardDemo2({source}) {
   return (
     <CardContainer className="inter-var">
       <CardBody className="bg-gray-50 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-black dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-6 border">
         <CardItem translateZ="50" className="text-xl font-bold text-neutral-600 dark:text-white">
-          24/7 Road Assistance
+          First Class Services
         </CardItem>
         <CardItem as="p" translateZ="60" className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300">
-          Reliable support when you need it most
+          Where luxury meets exceptional care, creating unforgettable
         </CardItem>
         <CardItem translateZ="100" className="w-full mt-4">
           <img
@@ -65,13 +65,13 @@ export function ThreeDCardCarousel() {
     <div className="w-full py-20 px-4">
       <Slider {...settings}>
         <div>
-          <ThreeDCardDemo />
+          <ThreeDCardDemo2 />
         </div>
         <div>
-          <ThreeDCardDemo />
+          <ThreeDCardDemo2 />
         </div>
         <div>
-          <ThreeDCardDemo />
+          <ThreeDCardDemo2 />
         </div>
       </Slider>
     </div>

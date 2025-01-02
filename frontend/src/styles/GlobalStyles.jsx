@@ -15,6 +15,7 @@ const GlobalStyles = createGlobalStyle`
     position: relative;
     z-index: 0;
     animation: gradientShift 15s ease infinite;
+
   }
 
   body::before {
@@ -43,15 +44,15 @@ const GlobalStyles = createGlobalStyle`
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
   }
 
-  h1, h2, h3 {
+  h1, h2, h3, {
     text-align: center;
     color: #fff;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
   }
     
 
-  button {
-    background: linear-gradient(135deg, #6a0dad, #9d50bb);
+  btn {
+    background: linear-gradient(#006699, #395963, #009999);
     border: none;
     padding: 10px 20px;
     color: #fff;
@@ -60,7 +61,7 @@ const GlobalStyles = createGlobalStyle`
     transition: transform 0.3s ease, box-shadow 0.3s ease;
   }
 
-  button:hover {
+  btn:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 15px rgba(154, 50, 205, 0.4);
   }
